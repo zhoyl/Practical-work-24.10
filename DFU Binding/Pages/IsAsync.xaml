@@ -1,0 +1,29 @@
+﻿<Page x:Class="DFU_Binding.Pages.IsAsync"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DFU_Binding.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="360" d:DesignWidth="640">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="IsAsync" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Change" Margin="5" Padding="5" Click="ChangeItem1_Click"/>
+                <Label FontSize="16" VerticalContentAlignment="Center" Content="{Binding Item1, FallbackValue='Loading...'}" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Change" Margin="5" Padding="5" Click="ChangeItem2_Click"/>
+                <Label FontSize="16" VerticalContentAlignment="Center" Content="{Binding Item2, FallbackValue='Loading async...', IsAsync=True}" FontWeight="Bold"/>
+            </StackPanel>
+            <ProgressBar Height="10" Margin="5" Value="-1" IsIndeterminate="True"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

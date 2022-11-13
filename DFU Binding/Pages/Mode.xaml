@@ -1,0 +1,93 @@
+﻿<Page x:Class="DFU_Binding.Pages.Mode"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DFU_Binding.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="360" d:DesignWidth="640">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Mode" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Grid Grid.Row="1" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="0,0,0,1" Height="33"/>
+                <Label Grid.Row="1" Content="Target" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0"/>
+                <Label Grid.Row="2" Content="Source" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="OneWay" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,1"/>
+                <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0">
+                    <CheckBox x:Name="Target1" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsChecked, ElementName=Source1, Mode=OneWay}"/>
+                </Border>
+                <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0">
+                    <CheckBox x:Name="Source1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="TwoWay" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,1" Margin="0"/>
+                <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0">
+                    <CheckBox x:Name="Target2" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsChecked, ElementName=Source2, Mode=TwoWay}" />
+                </Border>
+                <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0">
+                    <CheckBox x:Name="Source2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="OneWayToSource" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,1" Height="33"/>
+                <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0">
+                    <CheckBox x:Name="Target3" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsChecked, ElementName=Source3, Mode=OneWayToSource}" />
+                </Border>
+                <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0">
+                    <CheckBox x:Name="Source3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+            </Grid>
+            <Grid Grid.Column="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="OneTime" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center" BorderBrush="Black" BorderThickness="1"/>
+                <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1,0,1,1" Margin="0">
+                    <CheckBox x:Name="Target4" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsChecked, ElementName=Source4, Mode=OneTime}"/>
+                </Border>
+                <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1,0,1,1" Margin="0">
+                    <CheckBox x:Name="Source4" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True" />
+                </Border>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Page>
